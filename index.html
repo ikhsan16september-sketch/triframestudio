@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Triframe Creative Studio | Jasa Videografi & Visual Cinematic</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        dark: {
+                            900: '#0a0a0c',
+                            800: '#121216',
+                            700: '#1a1a24',
+                            600: '#272735',
+                        },
+                        gold: {
+                            500: '#f59e0b',
+                            600: '#d97706',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0a0a0c;
+            color: #f3f4f6;
+        }
+        .cinematic-gradient {
+            background: linear-gradient(135deg, rgba(245, 158, 11, 0.15) 0%, rgba(10, 10, 12, 0.95) 100%);
+        }
+        .glass-card {
+            background: rgba(26, 26, 36, 0.75);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+    </style>
+</head>
+<body class="bg-dark-900 text-gray-100 antialiased selection:bg-gold-500 selection:text-dark-900">
+
+    <!-- Header / Navbar -->
+    <header class="fixed top-0 left-0 right-0 z-50 glass-card border-b border-white/10 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-gold-600 to-gold-500 flex items-center justify-center shadow-lg shadow-gold-500/20 group-hover:scale-105 transition-transform">
+                    <i class="fa-solid fa-video text-dark-900 text-lg"></i>
+                </div>
+                <div>
+                    <span class="text-lg font-bold tracking-wider block text-white leading-tight">TRIFRAME</span>
+                    <span class="text-xs text-gold-500 font-medium tracking-widest uppercase">Creative Studio</span>
+                </div>
+            </a>
+
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+                <a href="#beranda" class="text-gray-300 hover:text-gold-500 transition-colors">Beranda</a>
+                <a href="#layanan" class="text-gray-300 hover:text-gold-500 transition-colors">Layanan & Harga</a>
+                <a href="#portofolio" class="text-gray-300 hover:text-gold-500 transition-colors">Portofolio</a>
+                <a href="#tim" class="text-gray-300 hover:text-gold-500 transition-colors">Tim Kami</a>
+                <a href="#tentang" class="text-gray-300 hover:text-gold-500 transition-colors">Tentang</a>
+            </nav>
+
+            <!-- CTA Button -->
+            <div class="hidden md:flex items-center gap-4">
+                <a href="#booking" onclick="openBookingModal('General Session')" class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-gold-600 to-gold-500 text-dark-900 font-semibold text-sm shadow-lg shadow-gold-500/20 hover:opacity-95 transition-all transform hover:-translate-y-0.5">
+                    <i class="fa-solid fa-calendar-check mr-2"></i> Reservasi Sesi
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-gray-300 hover:text-white p-2 text-xl focus:outline-none">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden glass-card border-t border-white/10 px-4 pt-4 pb-6 space-y-3">
+            <a href="#beranda" class="block text-gray-300 hover:text-gold-500 py-2">Beranda</a>
+            <a href="#layanan" class="block text-gray-300 hover:text-gold-500 py-2">Layanan & Harga</a>
+            <a href="#portofolio" class="block text-gray-300 hover:text-gold-500 py-2">Portofolio</a>
+            <a href="#tim" class="block text-gray-300 hover:text-gold-500 py-2">Tim Kami</a>
+            <a href="#tentang" class="block text-gray-300 hover:text-gold-500 py-2">Tentang</a>
+            <div class="pt-2">
+                <button onclick="openBookingModal('General Session')" class="w-full py-3 rounded-xl bg-gradient-to-r from-gold-600 to-gold-500 text-dark-900 font-semibold text-center text-sm shadow-lg shadow-gold-500/20">
+                    <i class="fa-solid fa-calendar-check mr-2"></i> Reservasi Sesi
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="beranda" class="relative min-h-screen flex items-center justify-center pt-28 pb-16 overflow-hidden cinematic-gradient">
+        <!-- Background Glow Accents -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gold-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card border border-gold-500/30 text-gold-400 text-xs font-semibold uppercase tracking-wider mb-6 animate-pulse">
+                <i class="fa-solid fa-clapperboard"></i> Production House & Visual Cinematic
+            </div>
+            
+            <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white mb-6 leading-tight max-w-4xl mx-auto">
+                Abadikan Momen Berharga Menjadi <span class="text-transparent bg-clip-text bg-gradient-to-r from-gold-500 via-amber-400 to-yellow-200">Karya Sinematis</span>
+            </h1>
+            
+            <p class="text-base sm:text-lg lg:text-xl text-gray-300 max-w-2xl mx-auto mb-10 leading-relaxed">
+                Triframe Creative Studio menghadirkan jasa videografi profesional untuk pernikahan, wisuda, otomotif, traveling, hingga komersial UMKM dengan sistem Pay-Per-Session yang fleksibel.
+            </p>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="#portofolio" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-gold-600 to-gold-500 text-dark-900 font-bold text-base shadow-xl shadow-gold-500/20 hover:opacity-95 transition-all transform hover:-translate-y-1">
+                    Jelajahi Portofolio <i class="fa-solid fa-arrow-right ml-2"></i>
+                </a>
+                <button onclick="openBookingModal('General Session')" class="w-full sm:w-auto px-8 py-4 rounded-xl glass-card text-white font-semibold text-base border border-white/20 hover:bg-white/10 transition-all">
+                    Booking Jadwal Shooting <i class="fa-solid fa-calendar-days ml-2"></i>
+                </button>
+            </div>
+
+            <!-- Quick Stats -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-16 max-w-4xl mx-auto">
+                <div class="glass-card p-6 rounded-2xl text-center">
+                    <div class="text-3xl font-extrabold text-gold-500 mb-1">Rp350k</div>
+                    <div class="text-xs text-gray-400 font-medium uppercase tracking-wider">Tarif Standar / Sesi</div>
+                </div>
+                <div class="glass-card p-6 rounded-2xl text-center">
+                    <div class="text-3xl font-extrabold text-gold-500 mb-1">100%</div>
+                    <div class="text-xs text-gray-400 font-medium uppercase tracking-wider">Kualitas Sinematis</div>
+                </div>
+                <div class="glass-card p-6 rounded-2xl text-center">
+                    <div class="text-3xl font-extrabold text-gold-500 mb-1">&lt; 4 Jam</div>
+                    <div class="text-xs text-gray-400 font-medium uppercase tracking-wider">Respon Layanan Cepat</div>
+                </div>
+                <div class="glass-card p-6 rounded-2xl text-center">
+                    <div class="text-3xl font-extrabold text-gold-500 mb-1">S1 Bisnis</div>
+                    <div class="text-xs text-gray-400 font-medium uppercase tracking-wider">Universitas Pahlawan</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services & Pricing Section -->
+    <section id="layanan" class="py-24 bg-dark-800 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-gold-500 font-semibold text-sm uppercase tracking-widest block mb-2">Layanan Profesional Kami</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">Pilih Sesi Videografi Sesuai Kebutuhan Anda</h2>
+                <p class="text-gray-400 text-base">Kami menerapkan model <span class="text-gold-400 font-medium">Pay-Per-Project / Session</span> transparan dengan standar peralatan dan editing profesional.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1: Wedding -->
+                <div class="glass-card rounded-3xl p-8 flex flex-col justify-between border border-white/10 hover:border-gold-500/50 transition-all group">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-gold-500/10 text-gold-500 flex items-center justify-center text-2xl mb-6 group-hover:bg-gold-500 group-hover:text-dark-900 transition-colors">
+                            <i class="fa-solid fa-ring"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Wedding Cinematic (WCC)</h3>
+                        <p class="text-gray-400 text-sm mb-6 leading-relaxed">Abadikan momen sakral pernikahan dengan sentuhan angle sinematis, color grading premium, & highlight emosional.</p>
+                        <ul class="space-y-3 text-sm text-gray-300 mb-8">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-500"></i> Sesi Pengambilan Gambar Full</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-500"></i> Video Cinematic 1-3 Menit (IG/TikTok)</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-500"></i> Full HD / 4K Resolution</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <div class="flex items-baseline justify-between mb-4 pt-4 border-t border-white/10">
+                            <span class="text-xs text-gray-400 uppercase tracking-wider">Mulai Dari</span>
+                            <span class="text-2xl font-bold text-gold-500">Rp350.000 <span class="text-xs font-normal text-gray-400">/sesi</span></span>
+                        </div>
+                        <button onclick="openBookingModal('Wedding Cinematic')" class="w-full py-3 rounded-xl bg-white/10 hover:bg-gold-500 hover:text-dark-900 font-semibold text-sm transition-all text-white flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-calendar-plus"></i> Booking Sesi Ini
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Service 2: Graduation -->
+                <div class="glass-card rounded-3xl p-8 flex flex-col justify-between border border-white/10 hover:border-gold-500/50 transition-all group">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-gold-500/10 text-gold-500 flex items-center justify-center text-2xl mb-6 group-hover:bg-gold-500 group-hover:text-dark-900 transition-colors">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Video Wisuda / Graduation</h3>
+                        <p class="text-gray-400 text-sm mb-6 leading-relaxed">Rayakan kelulusan Anda dengan dokumentasi sinematis yang elegan bersama keluarga dan sahabat terdekat.</p>
+                        <ul class="space-y-3 text-sm text-gray-300 mb-8">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-500"></i> Sesi Outdoor & Kampus</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-500"></i> Cinematic Reel & Story Format</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-500"></i> Professional Color Grading</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <div class="flex items-baseline justify-between mb-4 pt-4 border-t border-white/10">
+                            <span class="text-xs text-gray-400 uppercase tracking-wider">Mulai Dari</span>
+                            <span class="text-2xl font-bold text-gold-500">Rp350.000 <span class="text-xs font-normal text-gray-400">/sesi</span></span>
+                        </div>
+                        <button onclick="openBookingModal('Video Wisuda')" class="w-full py-3 rounded-xl bg-white/10 hover:bg-gold-500 hover:text-dark-900 font-semibold text-sm transition-all text-white flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-calendar-plus"></i> Booking Sesi Ini
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Service 3: Automotive -->
+                <div class="glass-card rounded-3xl p-8 flex flex-col justify-between border border-white/10 hover:border-gold-500/50 transition-all group">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-gold-500/10 text-gold-500 flex items-center justify-center text-2xl mb-6 group-hover:bg-gold-500 group-hover:text-dark-900 transition-colors">
+                            <i class="fa-solid fa-car-side"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Motor & Mobil Cinematic</h3>
+                        <p class="text-gray-400 text-sm mb-6 leading-relaxed">Tonjolkan estetika kendaraan kesayangan Anda dengan rolling shots, detail close-up, dan sound design memukau.</p>
+                        <ul class="space-y-3 text-sm text-gray-300 mb-8">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-500"></i> Rolling Shot & Static Detail</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-500"></i> Dynamic Cinematic Editing</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-500"></i> Cocok untuk Komunitas & Konten</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <div class="flex items-baseline justify-between mb-4 pt-4 border-t border-white/10">
+                            <span class="text-xs text-gray-400 uppercase tracking-wider">Mulai Dari</span>
+                            <span class="text-2xl font-bold text-gold-500">Rp350.000 <span class="text-xs font-normal text-gray-400">/sesi</span></span>
+                        </div>
+                        <button onclick="openBookingModal('Otomotif Cinematic')" class="w-full py-3 rounded-xl bg-white/10 hover:bg-gold-500 hover:text-dark-900 font-semibold text-sm transition-all text-white flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-calendar-plus"></i> Booking Sesi Ini
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Service 4: Traveling -->
+                <div class="glass-card rounded-3xl p-8 flex flex-col justify-between border border-white/10 hover:border-gold-500/50 transition-all group">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-gold-500/10 text-gold-500 flex items-center justify-center text-2xl mb-6 group-hover:bg-gold-500 group-hover:text-dark-900 transition-colors">
+                            <i class="fa-solid fa-plane-departure"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Traveling & Vlog Content</h3>
+                        <p class="text-gray-400 text-sm mb-6 leading-relaxed">Dokumentasikan perjalanan wisata atau konten vlog Anda dengan narasi visual yang sinematis dan memikat penonton.</p>
+                        <ul class="space-y-3 text-sm text-gray-300 mb-8">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-500"></i> Companion Kameramen Perjalanan</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-500"></i> Storytelling & Vlog Editing</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-500"></i> Optimized untuk YouTube / Reels</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <div class="flex items-baseline justify-between mb-4 pt-4 border-t border-white/10">
+                            <span class="text-xs text-gray-400 uppercase tracking-wider">Mulai Dari</span>
+                            <span class="text-2xl font-bold text-gold-500">Rp350.000 <span class="text-xs font-normal text-gray-400">/sesi</span></span>
+                        </div>
+                        <button onclick="openBookingModal('Traveling & Vlog')" class="w-full py-3 rounded-xl bg-white/10 hover:bg-gold-500 hover:text-dark-900 font-semibold text-sm transition-all text-white flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-calendar-plus"></i> Booking Sesi Ini
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Service 5: Commercial UMKM -->
+                <div class="glass-card rounded-3xl p-8 flex flex-col justify-between border border-white/10 hover:border-gold-500/50 transition-all group lg:col-span-2">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-gold-500/10 text-gold-500 flex items-center justify-center text-2xl mb-6 group-hover:bg-gold-500 group-hover:text-dark-900 transition-colors">
+                            <i class="fa-solid fa-store"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Promotional Video Commercial UMKM</h3>
+                        <p class="text-gray-400 text-sm mb-6 leading-relaxed">Tingkatkan penjualan produk dan brand awareness UMKM Anda melalui video komersial berkualitas tinggi yang persuasif dan estetis.</p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <ul class="space-y-3 text-sm text-gray-300">
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-500"></i> Product Showcase & Branding</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-500"></i> Social Media Ads Ready (IG/TikTok)</li>
+                            </ul>
+                            <ul class="space-y-3 text-sm text-gray-300">
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-500"></i> Script & Concept Consultation</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-500"></i> Fast Turnaround Time</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="pt-6 mt-6 border-t border-white/15 flex flex-col sm:flex-row items-center justify-between gap-4">
+                        <div>
+                            <span class="text-xs text-gray-400 uppercase tracking-wider block">Tarif Fleksibel / Sesi Proyek</span>
+                            <span class="text-2xl font-bold text-gold-500">Rp350.000 <span class="text-xs font-normal text-gray-400">/sesi dasar</span></span>
+                        </div>
+                        <button onclick="openBookingModal('Commercial UMKM')" class="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-gradient-to-r from-gold-600 to-gold-500 text-dark-900 font-bold text-sm shadow-lg shadow-gold-500/20 hover:opacity-95 transition-all">
+                            <i class="fa-solid fa-calendar-plus mr-2"></i> Booking Sesi UMKM
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portofolio" class="py-24 bg-dark-900 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+                <div>
+                    <span class="text-gold-500 font-semibold text-sm uppercase tracking-widest block mb-2">Galeri Karya</span>
+                    <h2 class="text-3xl sm:text-4xl font-bold text-white">Portofolio Visual Cinematic</h2>
+                </div>
+                <!-- Filter Buttons -->
+                <div class="flex flex-wrap gap-2 mt-6 md:mt-0">
+                    <button onclick="filterPortfolio('all')" class="portfolio-btn px-4 py-2 rounded-xl text-xs font-semibold bg-gold-500 text-dark-900 transition-all">Semua</button>
+                    <button onclick="filterPortfolio('wedding')" class="portfolio-btn px-4 py-2 rounded-xl text-xs font-semibold glass-card text-gray-300 hover:text-white transition-all">Wedding</button>
+                    <button onclick="filterPortfolio('graduation')" class="portfolio-btn px-4 py-2 rounded-xl text-xs font-semibold glass-card text-gray-300 hover:text-white transition-all">Wisuda</button>
+                    <button onclick="filterPortfolio('automotive')" class="portfolio-btn px-4 py-2 rounded-xl text-xs font-semibold glass-card text-gray-300 hover:text-white transition-all">Otomotif</button>
+                    <button onclick="filterPortfolio('commercial')" class="portfolio-btn px-4 py-2 rounded-xl text-xs font-semibold glass-card text-gray-300 hover:text-white transition-all">UMKM</button>
+                </div>
+            </div>
+
+            <!-- Portfolio Grid -->
+            <div id="portfolio-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Item 1 -->
+                <div class="portfolio-item group rounded-3xl overflow-hidden glass-card border border-white/10" data-category="wedding">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://placehold.co/600x400/1a1a24/f59e0b?text=Wedding+Cinematic" alt="Wedding Cinematic" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-dark-900 via-transparent to-transparent opacity-80"></div>
+                        <span class="absolute top-4 left-4 px-3 py-1 rounded-lg bg-dark-900/80 backdrop-blur-md text-gold-400 text-xs font-medium border border-white/10">Wedding</span>
+                        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-dark-900/40 backdrop-blur-sm">
+                            <span class="w-12 h-12 rounded-full bg-gold-500 text-dark-900 flex items-center justify-center text-lg shadow-lg">
+                                <i class="fa-solid fa-play ml-0.5"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-white mb-2">The Eternal Vows - Rian & Siska</h3>
+                        <p class="text-gray-400 text-xs leading-relaxed">Video pernikahan berkonsep cinematic story dengan sentuhan warna hangat & emosional.</p>
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="portfolio-item group rounded-3xl overflow-hidden glass-card border border-white/10" data-category="graduation">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://placehold.co/600x400/1a1a24/f59e0b?text=Graduation+Cinematic" alt="Graduation" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-dark-900 via-transparent to-transparent opacity-80"></div>
+                        <span class="absolute top-4 left-4 px-3 py-1 rounded-lg bg-dark-900/80 backdrop-blur-md text-gold-400 text-xs font-medium border border-white/10">Wisuda</span>
+                        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-dark-900/40 backdrop-blur-sm">
+                            <span class="w-12 h-12 rounded-full bg-gold-500 text-dark-900 flex items-center justify-center text-lg shadow-lg">
+                                <i class="fa-solid fa-play ml-0.5"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-white mb-2">Graduation Day - Universitas Pahlawan</h3>
+                        <p class="text-gray-400 text-xs leading-relaxed">Dokumentasi momen wisuda penuh kebanggaan bersama keluarga tercinta.</p>
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="portfolio-item group rounded-3xl overflow-hidden glass-card border border-white/10" data-category="automotive">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://placehold.co/600x400/1a1a24/f59e0b?text=Automotive+Cinematic" alt="Automotive" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-dark-900 via-transparent to-transparent opacity-80"></div>
+                        <span class="absolute top-4 left-4 px-3 py-1 rounded-lg bg-dark-900/80 backdrop-blur-md text-gold-400 text-xs font-medium border border-white/10">Otomotif</span>
+                        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-dark-900/40 backdrop-blur-sm">
+                            <span class="w-12 h-12 rounded-full bg-gold-500 text-dark-900 flex items-center justify-center text-lg shadow-lg">
+                                <i class="fa-solid fa-play ml-0.5"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-white mb-2">Night Runner - Sport Car Cinematic</h3>
+                        <p class="text-gray-400 text-xs leading-relaxed">Rolling shots malam hari dengan tone cyberpunk & sound design berenergi tinggi.</p>
+                    </div>
+                </div>
+
+                <!-- Item 4 -->
+                <div class="portfolio-item group rounded-3xl overflow-hidden glass-card border border-white/10" data-category="commercial">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://placehold.co/600x400/1a1a24/f59e0b?text=Commercial+UMKM" alt="Commercial UMKM" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-dark-900 via-transparent to-transparent opacity-80"></div>
+                        <span class="absolute top-4 left-4 px-3 py-1 rounded-lg bg-dark-900/80 backdrop-blur-md text-gold-400 text-xs font-medium border border-white/10">UMKM</span>
+                        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-dark-900/40 backdrop-blur-sm">
+                            <span class="w-12 h-12 rounded-full bg-gold-500 text-dark-900 flex items-center justify-center text-lg shadow-lg">
+                                <i class="fa-solid fa-play ml-0.5"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-white mb-2">Kopi Artisan Lokal - Commercial Video</h3>
+                        <p class="text-gray-400 text-xs leading-relaxed">Video promosi produk kuliner UMKM lokal untuk meningkatkan konversi penjualan digital.</p>
+                    </div>
+                </div>
+
+                <!-- Item 5 -->
+                <div class="portfolio-item group rounded-3xl overflow-hidden glass-card border border-white/10" data-category="wedding">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://placehold.co/600x400/1a1a24/f59e0b?text=Wedding+Reception" alt="Wedding Reception" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-dark-900 via-transparent to-transparent opacity-80"></div>
+                        <span class="absolute top-4 left-4 px-3 py-1 rounded-lg bg-dark-900/80 backdrop-blur-md text-gold-400 text-xs font-medium border border-white/10">Wedding</span>
+                        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-dark-900/40 backdrop-blur-sm">
+                            <span class="w-12 h-12 rounded-full bg-gold-500 text-dark-900 flex items-center justify-center text-lg shadow-lg">
+                                <i class="fa-solid fa-play ml-0.5"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-white mb-2">Golden Hour Reception - Dimas & Maya</h3>
+                        <p class="text-gray-400 text-xs leading-relaxed">Penyutradaraan visual resepsi outdoor dengan pencahayaan matahari terbenam.</p>
+                    </div>
+                </div>
+
+                <!-- Item 6 -->
+                <div class="portfolio-item group rounded-3xl overflow-hidden glass-card border border-white/10" data-category="automotive">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://placehold.co/600x400/1a1a24/f59e0b?text=Motorcycle+Vibe" alt="Motorcycle" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-dark-900 via-transparent to-transparent opacity-80"></div>
+                        <span class="absolute top-4 left-4 px-3 py-1 rounded-lg bg-dark-900/80 backdrop-blur-md text-gold-400 text-xs font-medium border border-white/10">Otomotif</span>
+                        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-dark-900/40 backdrop-blur-sm">
+                            <span class="w-12 h-12 rounded-full bg-gold-500 text-dark-900 flex items-center justify-center text-lg shadow-lg">
+                                <i class="fa-solid fa-play ml-0.5"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-white mb-2">Sunday Morning Ride - Moto Vlog</h3>
+                        <p class="text-gray-400 text-xs leading-relaxed">Koleksi video riding cinematic dengan sudut pandang kamera dinamis di jalur pegunungan.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="tim" class="py-24 bg-dark-800 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-gold-500 font-semibold text-sm uppercase tracking-widest block mb-2">Identitas Tim Profesional</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">Di Balik Lensa Triframe Creative Studio</h2>
+                <p class="text-gray-400 text-base">Mahasiswa S1 Bisnis Digital - Fakultas Ekonomi dan Bisnis Universitas Pahlawan Tuanku Tambusai.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Member 1 -->
+                <div class="glass-card rounded-3xl p-8 text-center border border-white/10 hover:border-gold-500/50 transition-all">
+                    <div class="w-24 h-24 rounded-2xl bg-gradient-to-tr from-gold-600 to-amber-400 mx-auto mb-6 flex items-center justify-center text-dark-900 text-3xl font-extrabold shadow-xl shadow-gold-500/10">
+                        FI
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-1">Faqih Islami</h3>
+                    <p class="text-xs text-gold-400 font-semibold uppercase tracking-wider mb-4">NIM: 2461209009</p>
+                    <div class="inline-block px-3 py-1 rounded-lg bg-white/5 text-xs text-gray-300 font-medium mb-4 border border-white/10">
+                        Admin / CS & Penjadwalan Sesi
+                    </div>
+                    <p class="text-gray-400 text-xs leading-relaxed">Menangani komunikasi klien melalui WhatsApp Business dengan standar respons cepat & manajemen jadwal reservasi shooting.</p>
+                </div>
+
+                <!-- Member 2 -->
+                <div class="glass-card rounded-3xl p-8 text-center border border-white/10 hover:border-gold-500/50 transition-all">
+                    <div class="w-24 h-24 rounded-2xl bg-gradient-to-tr from-gold-600 to-amber-400 mx-auto mb-6 flex items-center justify-center text-dark-900 text-3xl font-extrabold shadow-xl shadow-gold-500/10">
+                        MAI
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-1">Muhammad Alfirza Ikhsan</h3>
+                    <p class="text-xs text-gold-400 font-semibold uppercase tracking-wider mb-4">NIM: 2461209004</p>
+                    <div class="inline-block px-3 py-1 rounded-lg bg-white/5 text-xs text-gray-300 font-medium mb-4 border border-white/10">
+                        Produksi & Editor Visual
+                    </div>
+                    <p class="text-gray-400 text-xs leading-relaxed">Bertanggung jawab atas pengambilan gambar sinematis lapangan, pencahayaan, teknik kamera, serta proses editing & color grading.</p>
+                </div>
+
+                <!-- Member 3 -->
+                <div class="glass-card rounded-3xl p-8 text-center border border-white/10 hover:border-gold-500/50 transition-all">
+                    <div class="w-24 h-24 rounded-2xl bg-gradient-to-tr from-gold-600 to-amber-400 mx-auto mb-6 flex items-center justify-center text-dark-900 text-3xl font-extrabold shadow-xl shadow-gold-500/10">
+                        MAG
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-1">Mhd Al Ghifari</h3>
+                    <p class="text-xs text-gold-400 font-semibold uppercase tracking-wider mb-4">NIM: 2461209007</p>
+                    <div class="inline-block px-3 py-1 rounded-lg bg-white/5 text-xs text-gray-300 font-medium mb-4 border border-white/10">
+                        Marketing, Portofolio & Web Manager
+                    </div>
+                    <p class="text-gray-400 text-xs leading-relaxed">Mengelola kanal pemasaran digital, kurasi portofolio visual, optimasi aset website, dan strategi akuisisi klien.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About & Unit Economics Section -->
+    <section id="tentang" class="py-24 bg-dark-900 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <span class="text-gold-500 font-semibold text-sm uppercase tracking-widest block mb-2">Tentang Usaha Kami</span>
+                    <h2 class="text-3xl sm:text-4xl font-bold text-white mb-6">Mengapa Memilih Triframe Creative Studio?</h2>
+                    <p class="text-gray-300 text-sm sm:text-base leading-relaxed mb-6">
+                        Triframe Creative Studio lahir dari kebutuhan pasar yang tinggi akan konten visual estetik dan sinematis di media sosial. Berbasis di lingkungan kampus Bisnis Digital Universitas Pahlawan Tuanku Tambusai, kami memadukan keahlian teknis videografi dengan manajemen bisnis digital yang profesional.
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-gold-500/10 text-gold-500 flex items-center justify-center shrink-0 mt-1">
+                                <i class="fa-solid fa-coins"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-bold text-base">Model Pembayaran Transparan (Pay-Per-Project)</h4>
+                                <p class="text-gray-400 text-xs leading-relaxed">Tarif standar yang jelas Rp350.000 per sesi tanpa biaya tersembunyi, memudahkan klien menghitung anggaran.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-gold-500/10 text-gold-500 flex items-center justify-center shrink-0 mt-1">
+                                <i class="fa-solid fa-shield-halved"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-bold text-base">Kontrol Penuh Aset Digital & Website</h4>
+                                <p class="text-gray-400 text-xs leading-relaxed">Website mandiri memastikan data pesanan dan portofolio Anda aman serta selalu dapat diakses kapan pun.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Economic Simulation Card -->
+                <div class="glass-card rounded-3xl p-8 border border-gold-500/30">
+                    <div class="flex items-center justify-between mb-6 pb-4 border-b border-white/10">
+                        <h3 class="text-lg font-bold text-white flex items-center gap-2">
+                            <i class="fa-solid fa-calculator text-gold-500"></i> Simulasi Ekonomi Unit
+                        </h3>
+                        <span class="px-3 py-1 rounded-lg bg-gold-500/20 text-gold-400 text-xs font-semibold">Per Sesi / Proyek</span>
+                    </div>
+
+                    <div class="space-y-4 text-sm">
+                        <div class="flex justify-between items-center py-2 border-b border-white/5">
+                            <span class="text-gray-300">Harga Jual Standar per Sesi</span>
+                            <span class="font-bold text-white">Rp350.000</span>
+                        </div>
+                        <div class="flex justify-between items-center py-2 border-b border-white/5">
+                            <span class="text-gray-300">Total Biaya Variabel (Produksi & Editing)</span>
+                            <span class="font-semibold text-red-400">-Rp200.000</span>
+                        </div>
+                        <div class="flex justify-between items-center py-2 border-b border-white/5">
+                            <span class="text-gold-400 font-semibold">Margin Kontribusi per Sesi</span>
+                            <span class="font-bold text-gold-400">Rp150.000 (42.8%)</span>
+                        </div>
+                        <div class="flex justify-between items-center py-2 border-b border-white/5">
+                            <span class="text-gray-300">Biaya Tetap Usaha (Bulanan)</span>
+                            <span class="font-semibold text-gray-300">Rp325.000</span>
+                        </div>
+                        <div class="flex justify-between items-center pt-2">
+                            <span class="text-white font-bold">Titik Impas (BEP Target)</span>
+                            <span class="px-3 py-1 rounded-lg bg-gold-500 text-dark-900 font-extrabold text-xs">Min. 3 Sesi / Bulan</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking / Reservation Section -->
+    <section id="booking" class="py-24 bg-dark-800 relative">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="glass-card rounded-3xl p-8 sm:p-12 border border-white/10 shadow-2xl">
+                <div class="text-center mb-10">
+                    <span class="text-gold-500 font-semibold text-sm uppercase tracking-widest block mb-2">Reservasi Online</span>
+                    <h2 class="text-3xl font-bold text-white mb-3">Jadwalkan Sesi Shooting Anda</h2>
+                    <p class="text-gray-400 text-sm">Isi formulir di bawah ini. Admin kami (Faqih Islami) akan menghubungi Anda melalui WhatsApp dalam waktu maksimal 4 jam.</p>
+                </div>
+
+                <form id="reservation-form" onsubmit="handleReservation(event)" class="space-y-6">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-xs font-semibold uppercase tracking-wider text-gray-300 mb-2">Nama Lengkap</label>
+                            <input type="text" id="client-name" required class="w-full bg-dark-900 border border-white/15 rounded-xl px-4 py-3.5 text-white placeholder-gray-500 text-sm focus:outline-none focus:border-gold-500 transition-colors" placeholder="cth: Budi Santoso">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold uppercase tracking-wider text-gray-300 mb-2">Nomor WhatsApp</label>
+                            <input type="tel" id="client-phone" required class="w-full bg-dark-900 border border-white/15 rounded-xl px-4 py-3.5 text-white placeholder-gray-500 text-sm focus:outline-none focus:border-gold-500 transition-colors" placeholder="cth: 081234567890">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-xs font-semibold uppercase tracking-wider text-gray-300 mb-2">Pilih Layanan Sesi</label>
+                            <select id="service-type" class="w-full bg-dark-900 border border-white/15 rounded-xl px-4 py-3.5 text-white text-sm focus:outline-none focus:border-gold-500 transition-colors">
+                                <option value="Wedding Cinematic">Wedding Cinematic (WCC) - Rp350.000</option>
+                                <option value="Video Wisuda">Video Wisuda / Graduation - Rp350.000</option>
+                                <option value="Otomotif Cinematic">Motor & Mobil Cinematic - Rp350.000</option>
+                                <option value="Traveling & Vlog">Traveling & Vlog Content - Rp350.000</option>
+                                <option value="Commercial UMKM">Promotional Video UMKM - Rp350.000</option>
+                                <option value="General Session">Konsultasi / Sesi Lainnya - Rp350.000</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold uppercase tracking-wider text-gray-300 mb-2">Tanggal Rencana Shooting</label>
+                            <input type="date" id="shooting-date" required class="w-full bg-dark-900 border border-white/15 rounded-xl px-4 py-3.5 text-white text-sm focus:outline-none focus:border-gold-500 transition-colors">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-semibold uppercase tracking-wider text-gray-300 mb-2">Catatan / Lokasi Shooting</label>
+                        <textarea id="client-notes" rows="3" class="w-full bg-dark-900 border border-white/15 rounded-xl px-4 py-3.5 text-white placeholder-gray-500 text-sm focus:outline-none focus:border-gold-500 transition-colors" placeholder="Sebutkan lokasi, konsep khusus, atau waktu detail..."></textarea>
+                    </div>
+
+                    <button type="submit" class="w-full py-4 rounded-xl bg-gradient-to-r from-gold-600 to-gold-500 text-dark-900 font-bold text-base shadow-xl shadow-gold-500/20 hover:opacity-95 transition-all">
+                        <i class="fa-solid fa-paper-plane mr-2"></i> Kirim Permintaan Reservasi
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Modal -->
+    <div id="success-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-dark-900/80 backdrop-blur-md hidden">
+        <div class="glass-card rounded-3xl p-8 max-w-md w-full mx-4 text-center border border-gold-500/30">
+            <div class="w-16 h-16 rounded-full bg-gold-500/20 text-gold-500 flex items-center justify-center text-3xl mx-auto mb-6">
+                <i class="fa-solid fa-circle-check"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-white mb-2">Reservasi Berhasil Dikirim!</h3>
+            <p id="modal-desc" class="text-gray-300 text-sm mb-6 leading-relaxed">Terima kasih. Permintaan Anda telah dicatat. Admin kami (Faqih Islami) akan segera menghubungi Anda melalui WhatsApp.</p>
+            <button onclick="closeModal()" class="w-full py-3 rounded-xl bg-gold-500 text-dark-900 font-bold text-sm hover:opacity-90 transition-all">
+                Tutup
+            </button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark-900 border-t border-white/10 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+            <div>
+                <div class="flex items-center justify-center md:justify-start gap-3 mb-2">
+                    <div class="w-8 h-8 rounded-lg bg-gold-500 flex items-center justify-center">
+                        <i class="fa-solid fa-video text-dark-900 text-sm"></i>
+                    </div>
+                    <span class="text-white font-bold tracking-wider">TRIFRAME CREATIVE STUDIO</span>
+                </div>
+                <p class="text-xs text-gray-400">S1 Bisnis Digital | Fakultas Ekonomi dan Bisnis | Universitas Pahlawan Tuanku Tambusai</p>
+            </div>
+            <div class="text-xs text-gray-500">
+                &copy; 2026 Triframe Creative Studio. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Interactivity -->
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Portfolio Filtering
+        function filterPortfolio(category) {
+            const items = document.querySelectorAll('.portfolio-item');
+            const buttons = document.querySelectorAll('.portfolio-btn');
+
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-gold-500', 'text-dark-900');
+                btn.classList.add('glass-card', 'text-gray-300');
+            });
+
+            event.target.classList.remove('glass-card', 'text-gray-300');
+            event.target.classList.add('bg-gold-500', 'text-dark-900');
+
+            items.forEach(item => {
+                if (category === 'all' || item.getAttribute('data-category') === category) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        // Open Booking Modal with selected service
+        function openBookingModal(serviceName) {
+            const select = document.getElementById('service-type');
+            for (let i = 0; i < select.options.length; i++) {
+                if (select.options[i].text.includes(serviceName)) {
+                    select.selectedIndex = i;
+                    break;
+                }
+            }
+            document.getElementById('booking').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Handle Reservation Form Submission (without alert)
+        function handleReservation(event) {
+            event.preventDefault();
+            const name = document.getElementById('client-name').value;
+            const service = document.getElementById('service-type').value;
+            const date = document.getElementById('shooting-date').value;
+
+            document.getElementById('modal-desc').innerHTML = `Terima kasih <b>${name}</b>. Reservasi untuk layanan <b>${service}</b> pada tanggal <b>${date}</b> telah berhasil dikirim. Admin kami (Faqih Islami) akan segera menghubungi Anda dalam waktu maksimal 4 jam.`;
+            document.getElementById('success-modal').classList.remove('hidden');
+            document.getElementById('reservation-form').reset();
+        }
+
+        // Close Modal
+        function closeModal() {
+            document.getElementById('success-modal').classList.add('hidden');
+        }
+    </script>
+</body>
+</html>
